@@ -22,7 +22,7 @@ const Employee = ({employee, handleDelete}) => {
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div class="card-actions justify-end">
     <button class="btn btn-primary">Update</button>
-    <button  onClick={() => handleDelete(_id)} class="btn btn-primary">Hide</button>
+    <button  onClick={() => handleDelete(_id)} class="btn btn-primary">Delete</button>
     </div>
   </div>
 </div>

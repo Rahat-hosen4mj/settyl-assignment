@@ -1,25 +1,32 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import Employee from "./Employee";
+import { useQuery } from "react-query";
 
 const Employees = () => {
-  const [employees, setEmployees] = useState([]);
+//   const [employees, setEmployees] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:5000/employees")
-      .then((res) => res.json())
-      .then((data) => setEmployees(data));
-  }, []);
+  const {data: employees, refetch } = useQuery(['employee'], () => fetch('http://localhost:5000/employees').then(res => res.json()))
+
+
+//   useEffect(() => {
+//     fetch("http://localhost:5000/employees")
+//       .then((res) => res.json())
+//       .then((data) => setEmployees(data));
+//   }, []);
 
   const handleDelete = (id) =>{
+    console.log('delete data' ,id)
     const proceed = window.confirm('are you sure to delete');
     if(proceed){
-      fetch(`http://localhost:5000/employee/${id}`)
+      fetch(`http://localhost:5000/employee/${id}`,{
+            method: "DELETE"
+      })
       .then(res =>res.json())
       .then(data => {
         console.log(data);
-         const remain = employees.filter(employee => employee._id !== id);
-         setEmployees(remain);
-      
+        refetch()
+        toast.success('Player Delete successfully')
       })
     }
   }
