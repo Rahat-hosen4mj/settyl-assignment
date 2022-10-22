@@ -10,6 +10,9 @@ const Navbar = () => {
           <li>
             <Link to="/create">AddPost</Link>
           </li>
+          <li>
+            <Link to="/users">AllUser</Link>
+          </li>
           </>
     )
     return (
@@ -39,12 +42,13 @@ const Navbar = () => {
               {navItem}
             </ul>
           </div>
-          <a
-            href="www"
+          <a href=' '
+           
             className="btn btn-ghost font-bold text-2xl text-[#0bf222]"
           >
             Settyl
           </a>
+       
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal p-0 font-medium">{navItem}</ul>
