@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Employee from "./Employee";
 import { useQuery } from "react-query";
+import UpdateEmModal from "./UpdateEmModal";
 
 const Employees = () => {
 //   const [employees, setEmployees] = useState([]);
-
+  
+const [updateEmployee, setUpdateEmployee] = useState(null)
   const {data: employees, refetch } = useQuery(['employee'], () => fetch('http://localhost:5000/employees').then(res => res.json()))
-
-
 //   useEffect(() => {
 //     fetch("http://localhost:5000/employees")
 //       .then((res) => res.json())
@@ -36,8 +36,11 @@ const Employees = () => {
         <h2 className="mt-0 text-black py-3 font-medium">Total Employee: {employees?.length}</h2>
         <div className="grid md:grid-cols-3 gap-5">
           {employees?.map((employee) => (
-            <Employee employee={employee} handleDelete={handleDelete} key={employee._id}></Employee>
+            <Employee employee={employee} setUpdateEmployee={setUpdateEmployee} handleDelete={handleDelete} key={employee._id}></Employee>
           ))}
+          {
+            updateEmployee && <UpdateEmModal updateEmployee={updateEmployee} setUpdateEmployee={setUpdateEmployee} refetch={refetch} key={updateEmployee._id}></UpdateEmModal>
+          }
         </div>
       </div>
     </div>

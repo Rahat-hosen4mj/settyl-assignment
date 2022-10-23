@@ -85,27 +85,6 @@ const AddEmployee = () => {
                 {errors.number?.type === 'required' && <span className="label-text-alt text-red-500">{errors.number.message}</span>}
             </label>
         </div>
-
-
-        <div className="form-control w-full max-w-xs">
-            <label className="label">
-                <span className="label-text">Photo</span>
-            </label>
-            <input
-                type="file"
-                className="input input-bordered w-full max-w-xs"
-                {...register("image", {
-                    required: {
-                        value: true,
-                        message: 'Image is Required'
-                    }
-                })}
-            />
-            <label className="label">
-                {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-            </label>
-        </div>
-
         <input className='btn w-full max-w-xs text-white' type="submit" value="Add" />
     </form>
 </div>

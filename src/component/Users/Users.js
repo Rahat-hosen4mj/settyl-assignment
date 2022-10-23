@@ -7,6 +7,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [showAll, setShowall] = useState([]);
   const [updateUser, setUpdateUser] = useState(null);
+  const [id, setId] =useState('')
 
   useEffect(() => {
     fetch("http://localhost:5000/users")
@@ -15,7 +16,7 @@ const Users = () => {
         setUsers(data);
         setShowall(data);
       });
-  }, []);
+  }, [id]);
 
   const showAllUser = () => {
     setUsers(showAll);
@@ -53,7 +54,7 @@ const Users = () => {
             <User user={user} setUpdateUser={setUpdateUser} handleHide={handleHide} key={user._id}></User>
           ))}
            {
-          updateUser &&  <UpdateModal updateUser={updateUser}></UpdateModal>
+          updateUser &&  <UpdateModal updateUser={updateUser} setId={setId} setUpdateUser={setUpdateUser} key={updateUser._id}></UpdateModal>
          }
         </div>
       </div>
