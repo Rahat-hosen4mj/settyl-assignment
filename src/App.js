@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from './component/Dashboard/Dashboard';
 import AddUser from './component/AddUser/AddUser';
+import NotFound from './component/NotFound/NotFound';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
          <Route path='/addUser' element={ <AddUser />}></Route>
          <Route path='/create' element={ <AddEmployee />}></Route>
          <Route path='/users' element={ <Users />}></Route>
+         <Route path='*' element={<NotFound />}></Route>
        </Routes>
        <ToastContainer />
     </div>
