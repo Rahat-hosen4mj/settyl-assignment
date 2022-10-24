@@ -25,7 +25,7 @@ const AddEmployee = () => {
                     profile_image: img
                 }
 
-                fetch('http://localhost:5000/employee',{
+                fetch('https://morning-hamlet-36762.herokuapp.com/employee',{
                     method: "POST",
                     headers:{
                         'content-type': 'application/json',

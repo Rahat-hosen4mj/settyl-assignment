@@ -22,7 +22,7 @@ const UpdateModal = ({updateUser, setUpdateUser,setId}) => {
           salary: salary
       }
 
-      fetch(`http://localhost:5000/user/${_id}`, {
+      fetch(`https://morning-hamlet-36762.herokuapp.com/user/${_id}`, {
           method: 'PUT',
           headers: {
               'content-type': 'application/json'

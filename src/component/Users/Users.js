@@ -10,7 +10,7 @@ const Users = () => {
   const [id, setId] =useState('')
 
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://morning-hamlet-36762.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => {
         setUsers(data);
@@ -25,7 +25,7 @@ const Users = () => {
   const handleHide = (id) => {
     const proceed = window.confirm("are you sure to hide it");
     if (proceed) {
-      fetch(`http://localhost:5000/user/${id}`)
+      fetch(`https://morning-hamlet-36762.herokuapp.com/user/${id}`)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

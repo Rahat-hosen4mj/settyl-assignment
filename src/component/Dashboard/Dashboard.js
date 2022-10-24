@@ -18,23 +18,23 @@ const Dashboard = () => {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:5000/employees")
+    fetch("https://morning-hamlet-36762.herokuapp.com/employees")
       .then((res) => res.json())
       .then((data) => setEmployees(data));
   }, []);
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://morning-hamlet-36762.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
 
-  // const {data: users, } = useQuery(['user'], () => fetch('http://localhost:5000/users').then(res => res.json()))
+  // const {data: users, } = useQuery(['user'], () => fetch('https://morning-hamlet-36762.herokuapp.com/users').then(res => res.json()))
   console.log(users)
   return (
     <div className="w-100 md:w-auto bg-rose-50 grid grid-cols-1 md:grid-cols-2 px-2 ">
        <div className="md:ml-3 mt-5 p-2 md:p-5">
         <h2 className="text-2xl text-blue-600 font-medium mb-5">
-          name age and salary
+         User: name age and salary
         </h2>
         <BarChart width={450} height={420} data={users}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -48,7 +48,7 @@ const Dashboard = () => {
       </div>
       <div className="ml-5 mt-5 p-5">
         <h2 className="text-2xl text-blue-600 font-medium mb-5">
-          name and salary
+         Employee: name and salary
         </h2>
         <BarChart width={450} height={420} data={employees}>
           <CartesianGrid strokeDasharray="3 3" />

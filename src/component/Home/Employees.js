@@ -8,9 +8,9 @@ const Employees = () => {
 //   const [employees, setEmployees] = useState([]);
   
 const [updateEmployee, setUpdateEmployee] = useState(null)
-  const {data: employees, refetch } = useQuery(['employee'], () => fetch('http://localhost:5000/employees').then(res => res.json()))
+  const {data: employees, refetch } = useQuery(['employee'], () => fetch('https://morning-hamlet-36762.herokuapp.com/employees').then(res => res.json()))
 //   useEffect(() => {
-//     fetch("http://localhost:5000/employees")
+//     fetch("https://morning-hamlet-36762.herokuapp.com/employees")
 //       .then((res) => res.json())
 //       .then((data) => setEmployees(data));
 //   }, []);
@@ -19,7 +19,7 @@ const [updateEmployee, setUpdateEmployee] = useState(null)
     console.log('delete data' ,id)
     const proceed = window.confirm('are you sure to delete');
     if(proceed){
-      fetch(`http://localhost:5000/employee/${id}`,{
+      fetch(`https://morning-hamlet-36762.herokuapp.com/employee/${id}`,{
             method: "DELETE"
       })
       .then(res =>res.json())

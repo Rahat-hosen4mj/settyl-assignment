@@ -26,7 +26,7 @@ const AddUser = () => {
                     avatar: img
                 }
                 // send to your database 
-                fetch('http://localhost:5000/user', {
+                fetch('https://morning-hamlet-36762.herokuapp.com/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

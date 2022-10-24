@@ -13,7 +13,7 @@ const User = ({ user, handleHide,setUpdateUser }) => {
         </h2>
         <p>Email: {email}</p>
         <div className=" justify-end">
-        <label  onClick={() => setUpdateUser(user)} htmlFor="updateUser" class="btn btn-primary">Update</label>
+        <label  onClick={() => setUpdateUser(user)} htmlFor="updateUser" className="btn btn-primary">Update</label>
           
           <button onClick={() => handleHide(_id)} className="btn btn-primary ml-6">Hide</button>
         </div>

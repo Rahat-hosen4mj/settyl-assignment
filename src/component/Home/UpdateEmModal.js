@@ -15,7 +15,7 @@ const UpdateEmModal = ({setUpdateEmployee,updateEmployee,refetch}) => {
         employee_salary: salary
       }
 
-      fetch(`http://localhost:5000/employee/${_id}`, {
+      fetch(`https://morning-hamlet-36762.herokuapp.com/employee/${_id}`, {
           method: 'PUT',
           headers: {
               'content-type': 'application/json'
