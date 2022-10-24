@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const UpdateModal = ({updateUser, setUpdateUser,setId}) => {
     const {_id} = updateUser;
    
-    console.log(_id);
+    // console.log(_id);
     const handleBooking = event => {
     event.preventDefault();
     const firstName = event.target.firstName.value;

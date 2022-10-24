@@ -1,5 +1,5 @@
 ## live site link
-Click here for live site link [https://digital-trends4mj.netlify.app/](https://digital-trends4mj.netlify.app/)
+Click here for live site link [https://settyl-assignment.netlify.app/](https://settyl-assignment.netlify.app/)
 
 ## client side code link
 Click here for client code link [https://github.com/Rahat-hosen4mj/settyl-assignment](https://github.com/Rahat-hosen4mj/settyl-assignment).

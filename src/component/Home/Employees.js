@@ -16,7 +16,7 @@ const [updateEmployee, setUpdateEmployee] = useState(null)
 //   }, []);
 
   const handleDelete = (id) =>{
-    console.log('delete data' ,id)
+    // console.log('delete data' ,id)
     const proceed = window.confirm('are you sure to delete');
     if(proceed){
       fetch(`https://morning-hamlet-36762.herokuapp.com/employee/${id}`,{

@@ -6,7 +6,7 @@ const AddEmployee = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const imageStorageKey='809333cd2653b2fe985b53469c60e38c';
     const onSubmit = (data) =>{ 
-    console.log(data)
+    // console.log(data)
     const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
